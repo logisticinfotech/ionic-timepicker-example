@@ -1,0 +1,7 @@
+{
+  "name": "ionic4Timepicker",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

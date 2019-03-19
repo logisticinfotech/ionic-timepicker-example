@@ -1,0 +1,52 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            Home
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col size="12">
+                <ion-item>
+                    <ion-label>Component way</ion-label>
+                    <li-ionic-timepicker [(ngModel)]="mytime" [inputTimeConfig]="timePickerObj"></li-ionic-timepicker>
+                </ion-item>
+            </ion-col>
+            <ion-col size="12">
+                <ion-item>
+                    <ion-label>Directive way</ion-label>
+                    <ion-icon name="calendar"></ion-icon>
+                    <ion-input readonly [(ngModel)]="mytime" (ionChange)="onChangeTime()" [liIonicTimepicker]="timePickerObj"></ion-input>
+                </ion-item>
+            </ion-col>
+            <ion-col size="12">
+                <ion-item>
+                    <ion-label position="floating">Directive way Disabled</ion-label>
+                    <ion-input readonly [(ngModel)]="mytimePtBr" (ionChange)="onChangeTime()" [disabled]="isDisableTimePicker" [liIonicTimepicker]="timePickerObjPtBr"></ion-input>
+                </ion-item>
+            </ion-col>
+            <ion-col size="12">
+                <ion-item>
+                    <ion-label>Make above enable/disable</ion-label>
+                    <ion-toggle [(ngModel)]="isDisableTimePicker"></ion-toggle>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col size="9">
+                <ion-item>
+                    <ion-input readonly [(ngModel)]="selectedTime"></ion-input>
+                </ion-item>
+            </ion-col>
+            <ion-col size="3">
+                <ion-button (click)="openTimePicker()">Open</ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
